@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width-device-width, intial=scale = 1.0">
+
+        <link rel="shortcut icon" href="images/favicon-32x32(1).png" type="image/x-icon">
+        <link rel="stylesheet" href="style.css">
+        <title></title>
+    </head>
+    <body>
+        <main>
+            <div class="container">
+                <!--left section-->
+                <div class="left_section">
+                    <div class="cards">
+                        <div class="front_card">
+                            <img src="images/bg-card-front.png" alt="front_card" />
+                            <div class="card_container">
+                                <img class="card_logo" src="images/card-logo.svg" alt="logo" />
+                                <h1 id="number">0000 0000 0000 0000</h1>
+                                <div class="info">
+                                    <span id="name">jane appleseed</span>
+                                    <span id="date">
+                                        <span id="month">00</span>
+                                        /
+                                        <span id="year">00</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="back_card">
+                            <img src="images/bg-card-back.png" alt="back_card" />
+                            <span id="cvc">000</span>
+                        </div>
+                    </div>
+                </div>
+                <!--right_section-->
+                <div class="right_section">
+                    <form>
+                        <div class="grid1">
+                            <label>Cardholder Name</label>
+                            <input type="text" placeholder="eg. Jane Appleseed" id="card_name" />
+                        </div>
+                        <div class="grid2">
+                            <label>Card Number</label>
+                            <input type="number" oninput="if (this.value.length > this.maxLength) this.value=this.slice(0,this.maxLength)"
+                            minlength="16"
+                            maxlength="16"
+                            placeholder="eg. 1234 5678 9123 0000" id="card_number" required />
+                        </div>
+                        <div class="card_information">
+                            <div id="card_date">
+                                <label>Exp. Date (mm/yy)</label>
+                                <div class="two_inp">
+                                    <div>
+                                        <input type="text" placeholder="MM" oninput="if (this.value.length > this.maxLength) this.value=this.slice(0,this.maxLength)"
+                                        minlength="2"
+                                        maxlength="2" 
+                                        id="card_month" required />
+                                    </div>
+                                    <div>
+                                        <input type="text" placeholder="YY" oninput="if (this.value.length > this.maxLength) this.value=this.slice(0,this.maxLength)"
+                                        minlength="2"
+                                        maxlength="2" 
+                                        id="card_year" required />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid4">
+                                <label>Cvc</label>
+                                <input type="number" oninput="if (this.value.length > this.maxLength) this.value=this.slice(0,this.maxLength)"
+                                minlength="3"
+                                maxlength="3"
+                                placeholder="eg. 123" id="card_cvc" required/>
+                            </div>
+                        </div>
+
+                        <button type="submit" id="submitBtn">Confirm</button>
+                    </form>
+                    <div class="thank hidden">
+                        <img src="images/icon-complete.svg" alt="comleted" />
+                        <h1>Thank you!</h1>
+                        <p>We've added your card details</p>
+                        <button>Continue</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="index.js"></script>
+    </body>
+</html>
